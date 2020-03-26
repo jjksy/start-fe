@@ -56,6 +56,7 @@ image = { width: 1, height: 2 };
 
 var image1 = [1,2,3,4,5,6,7,8,9,10,11,12];
 image1[0] = '3';
+console.log(image1);
 
 
 var nick = null;
