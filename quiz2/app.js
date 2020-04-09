@@ -5,7 +5,6 @@ for(var i=0; i<4; i++){
     for(var j=0; j<4; j++) {
         var point = document.createElement('span');
         var color
-
         if ((j + (i * 5)) % 2 == 0) {
             color = 'black';
         } else {
@@ -17,7 +16,6 @@ for(var i=0; i<4; i++){
         chess.appendChild(point);
     }
 }
-
 chess.addEventListener('click', function(event) {
     var id = event.target.getAttribute('id');
     if (id.startsWith('point')) {
