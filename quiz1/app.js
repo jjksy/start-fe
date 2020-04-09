@@ -15,12 +15,12 @@ var now = document.getElementById('now');
 var next = document.getElementById('next');
 
 var str = '';
-var count = 1;
+var check = 1;
 
 
 function image() {
-    now.innerHTML = count + '/4';
-    for(var i=(count -1) * 2; i<count * 2; i++){
+    now.innerHTML = check + '/4';
+    for(var i=(check -1) * 2; i<check * 2; i++){
         if (i < todayPhoto.length) {
             str += '<img src="'+todayPhoto[i].img+'"> ';
         }
@@ -29,25 +29,25 @@ function image() {
     str = '';
 }
 prev.addEventListener('click', function() {
-    if(count == 1) {
-        count = 1;
-        console.log(count);
+    if(check == 1) {
+        check = 1;
+        console.log(check);
         image();
     } else {
-        count--;
-        console.log(count);
+        check--;
+        console.log(check);
         image();
     }
 })
 
 next.addEventListener('click', function() {
-    if (count == 4) {
-        count = 4;
-        console.log(count);
+    if (check == 4) {
+        check = 4;
+        console.log(check);
         image();
     } else {
-        count++;
-        console.log(count);
+        check++;
+        console.log(check);
         image();
     }
 })
