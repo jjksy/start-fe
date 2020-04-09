@@ -17,8 +17,17 @@ var next = document.getElementById('next');
 var str = '';
 var count = 1;
 
-image();
 
+function image() {
+    now.innerHTML = count + '/4';
+    for(var i=(count -1) * 2; i<count * 2; i++){
+        if (i < todayPhoto.length) {
+            str += '<img src="'+todayPhoto[i].img+'"> ';
+        }
+    } 
+    wrap.innerHTML = str;
+    str = '';
+}
 prev.addEventListener('click', function() {
     if(count == 1) {
         count = 1;
@@ -43,13 +52,4 @@ next.addEventListener('click', function() {
     }
 })
 
-function image() {
-    now.innerHTML = count + '/4';
-    for(var i=(count -1) * 2; i<count * 2; i++){
-        if (i < todayPhoto.length) {
-            str += '<img src="'+todayPhoto[i].img+'"> ';
-        }
-    } 
-    wrap.innerHTML = str;
-    str = '';
-}
+image();
