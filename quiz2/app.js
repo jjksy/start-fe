@@ -19,7 +19,7 @@ for(var i=0; i<4; i++){
 chess.addEventListener('click', function(event) {
     var id = event.target.getAttribute('id');
     if (id.startsWith('point')) {
-        chess.children[unclick].classList.remove('clicked');
-        event.target.classList.add('clicked');
+        chess.children[unclick].classList.remove('click');
+        event.target.classList.add('click');
     }
 });
