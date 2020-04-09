@@ -111,17 +111,26 @@ app.addEventListener('click',function(event){
         console.log(2);
     }
 }); */
-var list = document.querySelector('#list');
+/* var list = document.querySelector('#list');
 console.log(list.children);
 
 var app = document.getElementById('list');
 app.addEventListener('click',function(event){
     if(event.target.nodeName == "LI"){
         // 한개의 event리스너로 모든 li 에 click 이벤트 등록과 비슷
-        console.log(2);
+        console.log('li');
+        event.stopPropagation();
     }
 });
 
 document.body.addEventListener('click',function(){
     console.log('body');
+}); */
+
+var link = document.querySelector('#link');
+link.addEventListener('click',function(){
+    console.log(11111);
+    // event.stopPropagation();
+    event.preventDefault();
 });
+
