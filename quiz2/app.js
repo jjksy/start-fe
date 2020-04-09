@@ -1,4 +1,4 @@
-var prevClickedIndex = 0;
+var unclick = 0;
 var chess = document.getElementById("chess");
 
 for(var i=0; i<4; i++){
@@ -19,9 +19,7 @@ for(var i=0; i<4; i++){
 chess.addEventListener('click', function(event) {
     var id = event.target.getAttribute('id');
     if (id.startsWith('point')) {
-        var index = parseInt(id.substring(5));
-        chess.children[prevClickedIndex].classList.remove('clicked');
+        chess.children[unclick].classList.remove('clicked');
         event.target.classList.add('clicked');
-        prevClickedIndex = index;
     }
 });
