@@ -19,14 +19,25 @@ console.log(window.name);
         // history.go(1); 
 //이전 값의 주소를 가져 올 수는 없음. 개인정보 유출 가능성 있기 때문
 
-//screen
-screen.width
-screen.availWidth
+// //screen
+// screen.width
+// screen.availWidth
 
-//navigator
-navigator.userAgent
-navigator.language
-navigator.platform
+// //navigator
+// navigator.userAgent
+// navigator.language
+// navigator.platform
 
-//----------------------------------------------
-//dom 탐색
+// //----------------------------------------------
+// //dom 탐색
+
+// var debug = document.getElementById('debug');
+// console.log(debug);
+var box = document.querySelector('#debug');
+console.log(box)
+
+
+// var box = document.querySelector('.box');
+// var box2 = document.querySelector('.box');
+
+// console.log(box2);
