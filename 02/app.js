@@ -1,125 +1,63 @@
-console.log('app');
+console.log('app.js');
 
-//Create
-var todos = ['운동'];
-var todo = '게임';
-todos.push(todo);
-console.log(todos);
+//변수 & 주석
+// var name = 'Yeon';
+/*
+var Name = 'YEON';
 
-//Read
-var todos = ['운동','게임'];
-todos.forEach(function(todo){
-    console.log(todo);
-});
+console.log(name);
+console.log(Name);*/
 
-//Update
-var todos = ['운동','게임'];
-var updateTodo = '게임';
-var updateIndex = todos.findIndex(function(todo){
-    return todo === updateTodo;
-});
-todos[updateIndex] = '공부';
-console.log(todos);
+console.log(1);
+console.log(2);
 
-var todos = ['운동','게임'];
-var updateTodo = '게임';
+//데이터 타입
+var count =5; 
+console.log(1);
+    //number
 
-var newTodos = todos.map(function(todo){
-    if (todo === updateTodo) {
-        return '공부';
-    }
-    return todo;
-});
-console.log(newTodos);
+var nick = "my nick is 'fe'";
+var homepage = 'github.com/jjksy';
+    //string
 
-//-----------------
-//Delete
-var todos = ['운동', '공부', '목욕'];
-var deleteTodo = '공부';
-var deleteIndex = todos.findIndex(function(todo) {
-  return todo === deleteTodo;
-});
-todos.splice(deleteIndex, 1);
-console.log(todos);
+var isMan = true; //True | False
+console.log(isMan);
 
-var todos = ['운동', '공부'];
-var deleteTodo = '공부';
-var newTodos = todos.filter(function(toods) {
-  return todo !== delteTodo;
-});
-console.log(newTodo);
+console.log(nick =='');
+console.log(!!'test'); //true
+    //Boolean
 
-//-----------------
-var num = new Array( 10,20,30,40,50,60,70,100);
-
-document.write('합계: ' , sum(num), '<br />');
-document.write('산술 평균: ' , average(num), '<br />');
+    var log = function(str) {
+        console.log(str);
+      };
+      function log(str) {
+        console.log(str);
+      }
+      log("hello");
+      //function : js코드로 조작할수 있는 형태의 값 변수나 배열, 객체에 저장가능, 전달인자로도 사용
 
 
+ var image = {
+     width: 100,
+    height: 100,
+    name: '1.png',
+}; // image = new Object();
+console.log(image);
+//----------
+image.width = 1;
+image.height = 2;
 
-// 배열 합계 구하기 함수
-function sum(array) {
-  var result = 0.0;
+image['width'] = 1; //연관배열
 
-  for (var i = 0; i < array.length; i++)
-    result += array[i];
+// image['name' + i] = '1.jpg'; //동적으로도 할당 가능
 
-  return result;
-}
+image = { width: 1, height: 2 };
+      //object
+
+var image1 = [1,2,3,4,5,6,7,8,9,10,11,12];
+image1[0] = '3';
+console.log(image1);
 
 
-// 배열 평균 구하기 함수
-function average(array) {
-  var sum = 0.0;
-
-  for (var i = 0; i < array.length; i++)
-    sum += array[i];
-
-  return sum / array.length;
-}
-//------------------------
-for(i=2; i<10; i++){
-    for(j=1; j<10; j++){
-      result = i + "x" + j + "=" + i*j + "<br>";
-      document.write(result);
-    }
-  }
-//------------------
-function multiplication(x) {
-    var result = [];
-    for (var i = 1; i <= 9; i++) {
-        result[i] = x * i;
-    }
-    return result;
-};
-
-function iResult(x, result) {
-    for (var i = 1; i <10; i++) {
-        document.write(x + " * " + i + " = " + result[i] + "<br>")
-    }
-};
-
-function main() {
-    console.log("run") 
-    for (var i = 2; i <10; i++) {
-        var ret = multiplication(i);
-        printResult(i, ret);
-    }            
-};
-
-main();
-//-----------------
-var dog ={
-    name:"Grace",
-    prettyGirl: function(){
-        console.log("Good girl~");
-    }
-};
-dog.prettyGirl();
-//-----------------------
-var num1= prompt("첫번째 숫자를 입력해주세요: ");
-    var n1 = Number(num1);
-    var num2 = prompt("두번째 숫자를 입력해주세요: ");
-    var n2 = Number(num2);
-    var plus = n1+n2
-    console.log(n1+"+"+n2+"="+plus);
+var nick = null;
+var nick; //undefined
