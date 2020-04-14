@@ -18,7 +18,7 @@ var str = '';
 var check = 1;
 
 
-function image() {
+function printImageList() {
     now.innerHTML = check + '/4';
     for (var i = (check - 1) * 2; i < check * 2; i++) {
         if (i < todayPhoto.length) {
@@ -29,24 +29,24 @@ function image() {
     str = '';
 }
 prev.addEventListener('click', function () {
-    if (check == 1) {
+    if (check === 1) {
         check = 1;
-        image();
+        printImageList();
     }
     else {
         check--;
-        image();
+        printImageList();
     }
 })
 
 next.addEventListener('click', function () {
-    if (check == 4) {
+    if (check === 4) {
         check = 4;
-        image();
+        printImageList();
     }
     else {
         check++;
-        image();
+        printImageList();
     }
 })
-image();
+printImageList();
