@@ -16,10 +16,11 @@ var next = document.getElementById('next');
 
 var str = '';
 var check = 1;
+var ShowAtOnce = 4;
 
 
 function printImageList() {
-    now.innerHTML = check + '/4';
+    now.innerHTML = check + '/ShowAtOnce';
     for (var i = (check - 1) * 2; i < check * 2; i++) {
         if (i < todayPhoto.length) {
             str += '<img src="' + todayPhoto[i].img + '"> ';
