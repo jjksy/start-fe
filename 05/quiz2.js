@@ -20,15 +20,16 @@ function printBoards() {
     }
     $board.innerHTML = str;
 }
-function select(event) {
 
+function select(event) {
     if ($select) {
-        $select.className = $select.className.replace('select', '');
+        $select.className = $select.className.replace(' select', '');
     }
     var el = event.currentTarget;
-    el.className += 'select';
+    el.className += ' select';
     $select = el;
 }
+
 function addEvent() {
     var $boards = document.querySelectorAll('span');
     var boardsLength = $boards.length;
@@ -36,5 +37,6 @@ function addEvent() {
         $boards[i].addEventListener('click', select);
     }
 }
+
 printBoards();
 addEvent();
