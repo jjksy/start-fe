@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>DOM</title>
+    <style>
+      body {
+        padding: 10px;
+      }
+      .box {
+        width: 100px;
+        height: 30px;
+        background-color: #ddd;
+      }
+      .red {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="text" class="txt" value="hello" />
+      <button class="text-btn">TEXT 넣기</button>
+      <br />
+      <button class="add-red">빨간색으로</button>
+      <button class="add-btn">추가</button>
+      <button class="delete-btn">삭제</button>
+      <button class="reset-btn">초기화</button>
+      <button class="toggle-btn">보이기,숨기기 토글</button>
+      <button class="image-btn">이미지</button>
+    </div>
+
+    <div class="box"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- 문제1
+.add-red 클릭하면 .box class속성에 .red를 추가
+결과
+<div class="box red"></div> -->
+
+<!-- 문제2
+.add-btn 클릭하면 .box 엘리먼트를 body 에 하나씩 추가
+결과
+<div class="box red"></div>
+<div class="box red"></div> -->
+
+<!-- 문제3
+.delete-btn 클릭하면 모든 .box 엘리먼트를 하나씩 삭제 -->
+
+<!-- 문제4
+.text-btn 클릭하면 .txt에 value값을 가져와서 .box에 가져온 value값 텍스트 추가
+.box 엘리먼트가 여러개 있을경우 동일하게 추가
+결과
+<div class="box">hello</div> -->
+
+<!-- 문제5
+.reset-btn 클릭하면 모든 .box 엘리먼트 제거 -->
+
+<!-- 문제6
+.toggle-btn 클릭하면 .box 엘리먼트 숨기고 다시 클릭하면 보이게 토글버튼 처리면 -->
+
+<!-- 문제7
+.image-btn 클릭하면 .box 엘리먼트에 이미지 출력
+이미지 주소: https://i.imgur.com/69NjYBH.png
+.box 엘리먼트가 없을경우 생성후 처리 -->
+
+<!-- 문제8
+위에서 작성한 코드들을 최대한 함수화, 재사용성 높임 -->
