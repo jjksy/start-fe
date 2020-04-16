@@ -50,15 +50,106 @@ var todayPhoto = [
         "id": "20120516092003892"
     }
 ];
+
+var ShowAtOnce = 3; 
 var page = 1;
-var ShowAtOnce = 3;
-var totalpage = todayPhoto.length / ShowAtOnce;//한페이지에 보일 개수를 전체에서 나눠용
-var wrap = document.getElementById('wrap');
+var totalPage = Math.ceil(todayPhoto.length / ShowAtOnce);//한페이지에 보일 개수를 전체에서 나눔
+//console.log(totalpage);
+//-----------------------------------------------------
 
-var str = '';
-for (var i = 0; i < todayPhoto.length; i++) {
+var $wrap = document.getElementById('wrap');
+var $btnPrev = document.querySelector('.btn-prev'); 
+var $btnNext = document.querySelector('.btn-next'); //위의 dom selector를 또 사용할 수 있기 때문에 이와 같이 변수화 해서 사용 하는 것이 좋다.
+var $page = document.querySelector('.page');
+var $totalPage = document.querySelector('.total-page');
 
-    str += '<img src="' + todayPhoto[i].img + '"> '; //이미지를 찍을 수 있는 str
+function prev(){
+    if(page  === 1) return 0;
+    page--;
+    // page = page - 1;
+    printImage(page);
+}
+function next(){
+    if(page === totalPage) return;
+    page++;
+    // page = page + 1;
+    printImage(page);
 }
 
-wrap.innerHTML = str;
+//document.querySelector('.btn-prev').addEventListener('click',prev);
+//document.querySelector('.btn-next').addEventListener('click',next);
+//이렇게 하거나 위에 var로 변수선언 해주고 아래와 같이 사용할 수도 있음----------
+$btnPrev.addEventListener('click',prev);
+$btnNext.addEventListener('click',next);
+
+function getStartIndex(page){
+    /* if(page === 1) return 0;
+    else if(page === 2) return 3;
+    else if(page === 3) return 6; */
+    var startIndex = (page -1) * ShowAtOnce;
+    return startIndex;
+}
+
+function printImage(page){
+    var startIndex = getStartIndex(page);
+    var str = '';
+    for (var i = startIndex; i < startIndex + ShowAtOnce; i++) {
+        if(todayPhoto[i]){
+            str += '<img src="' + todayPhoto[i].img + '"> '; 
+        //이미지를 찍을 수 있는 str
+        }   
+    }
+    
+    $wrap.innerHTML = str;
+    $page.innerHTML = page;
+    $totalPage.innerHTML = totalPage;
+}
+printImage(page);
+
+/* function printPage1(){
+    var str = '';
+    for (var i = 0; i < ShowAtOnce; i++) {
+    
+        str += '<img src="' + todayPhoto[i].img + '"> '; 
+        //이미지를 찍을 수 있는 str
+    }
+    
+    $wrap.innerHTML = str;
+    $page.innerHTML = page;
+    $totalPage.innerHTML = totalPage;
+}
+function printPage2(){
+    //3,4,5
+    var str = '';
+    for (var i = 3; i < 3 + ShowAtOnce; i++) {
+    
+        str += '<img src="' + todayPhoto[i].img + '"> '; 
+        //이미지를 찍을 수 있는 str
+    }
+    
+    $wrap.innerHTML = str;
+    $page.innerHTML = page;
+    $totalPage.innerHTML = totalPage;
+}
+function printPage3(){
+    //6,7,8
+    var str = '';
+    for (var i = 6; i < 6 + ShowAtOnce; i++) {
+        if(todayPhoto[i]){
+        str += '<img src="' + todayPhoto[i].img + '"> '; 
+        //이미지를 찍을 수 있는 str
+    }
+}
+    
+    $wrap.innerHTML = str;
+    $page.innerHTML = page;
+    $totalPage.innerHTML = totalPage;
+}
+
+//printPage1();
+//printPage2();
+//printPage3(); 
+//이렇게 작성하면 코드 재사용 어렵. 읽기도 어렵. >> 함수화 하자
+*/
+
+
