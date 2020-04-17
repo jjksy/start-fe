@@ -28,16 +28,12 @@ function getAllBoxes() {
 
 //1
 function addRedClass(){ 
-    //if click .add-red >> add .red to .box-class attribute
     getAllBoxes().forEach(function($box){
         $box.classList.add(redClass);
     })
 }
-//addRedClass();
-
 //2
 function addElm(){
-    //if click .add-btn >> add .box elm in body one by one
     $box.classList.add(boxClass);
 
     if(isHidden){
@@ -51,7 +47,6 @@ function addbox(){
 }
 //3
 function removeBox(){
-    //if click .delete-btn >> delete all .box elm one by one
     var $boxes = getAllBoxes();
     var $xBox = $boxes.item($boxes.length -1);
 
