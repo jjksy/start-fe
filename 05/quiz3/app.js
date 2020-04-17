@@ -33,7 +33,7 @@ function addRedClass(){
         $box.classList.add(redClass);
     })
 }
-addRedClass();
+//addRedClass();
 
 //2
 function addElm(){
