@@ -41,7 +41,7 @@ function addElm(){
     $box.classList.add(boxClass);
 
     if(isHidden){
-        //change attribute
+        //change attribute...
     }
     return $box;
 }
@@ -61,7 +61,7 @@ function removeBox(){
 }
 //4
 function addText(){
-    
+    //...
 }
 
 //5
