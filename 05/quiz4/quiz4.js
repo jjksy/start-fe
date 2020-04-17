@@ -1,17 +1,20 @@
 var $body = document.body;
-var $box = document.getElementById('box');
+var $box = document.querySelector('#box');
 var moveX = 0;
 var moveY = 0;
 var moveX2 = 0;
 var moveY2 = 0;
 
-function dragBox(x,y){
-
+function dragBox(){
+    //
 }
 
 function mouseDown(event){
     moveX = event.movementX;
     moveY = event.movementY;
+
+    $body.addEventListener('mousemove',mouseMove);
+    $box.addEventListener('mouseup',mouseUp);
 }
 
 function mouseMove(event){
@@ -25,5 +28,8 @@ function mouseMove(event){
 }
 
 function mouseUp(){
-
+    $body.addEventListener('mousemove',mouseMove);
+    $box.addEventListener('mouseup',mouseUp);
 }
+
+$box.addEventListener('mousedown',mouseDown);
