@@ -5,8 +5,9 @@ var moveY = 0;
 var moveX2 = 0;
 var moveY2 = 0;
 
-function dragBox(){
-    //
+function mouseUp(){
+    $body.addEventListener('mousemove',mouseMove);
+    $box.addEventListener('mouseup',mouseUp);
 }
 
 function mouseDown(event){
@@ -17,6 +18,10 @@ function mouseDown(event){
     $box.addEventListener('mouseup',mouseUp);
 }
 
+function dragBox(){
+    //
+}
+
 function mouseMove(event){
     moveX = event.movementX;
     moveY = event.movementY;
@@ -25,11 +30,6 @@ function mouseMove(event){
     moveY2 = event.movementY - moveY;
 
     dragBox(moveX2,moveY2);
-}
-
-function mouseUp(){
-    $body.addEventListener('mousemove',mouseMove);
-    $box.addEventListener('mouseup',mouseUp);
 }
 
 $box.addEventListener('mousedown',mouseDown);
