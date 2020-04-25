@@ -9,7 +9,12 @@ console.log(a,b,c); */
 // var str =  'aaaaaaaa
 // sdfs';  //이러면 에러남
 
-const s = `aaaaaaa
+/* const s = `aaaaaaa
 cccccccc
 ddddddddd`;
-console.log(s);
+console.log(s); */
+
+function sum(x,y){
+    return x+y;
+}
+console.log(sum(1,2));
