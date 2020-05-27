@@ -7,11 +7,15 @@ const headers = {
 function success(data) {
   //   console.log(result);
   //result.json().then((data) => {
+  const { documents } = data;
+  document.map((doc) => {
+    return `<li class="list-group-item"></li>`;
+  });
   console.log(data);
   //});
 }
 function error() {
-  console.log(2);
+  alert('데이터를 불러올 수 없습니다');
 }
 function search() {
   const { value } = $text;
