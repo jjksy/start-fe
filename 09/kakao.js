@@ -1,9 +1,9 @@
 const $btn = document.querySelector('#search-btn');
 const $text = document.querySelector('#search-text');
-const $result = document.querySelector('#sresult');
+const $result = document.querySelector('#result');
 const url = 'https://dapi.kakao.com/v2/search/web';
 const headers = {
-  Authorization: 'KakaoAK 8230f2d0920565c7c1941e0361ad001d',
+  Authorization: 'KakaoAK 7943c4fa9d80d672b6182bb7a5873a4a    ',
 };
 function success(data) {
   const { documents } = data;
