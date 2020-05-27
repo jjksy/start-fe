@@ -3,13 +3,13 @@ const $text = document.querySelector('#search-text');
 const $result = document.querySelector('#sresult');
 const url = 'https://dapi.kakao.com/v2/search/web';
 const headers = {
-  Authorization: 'KakaoAK 0a0905f3178b20305fd9f550e69feab5',
+  Authorization: 'KakaoAK 8230f2d0920565c7c1941e0361ad001d',
 };
 function success(data) {
   const { documents } = data;
   const li = documents.map((doc) => {
-    return `<li class="list-group-item"><a href="${doc.url}" target = "_blank">
-    ${doc.contents}</a></li>`;
+    return `<li class="list-group-item"><a href="${doc.url}" 
+    target = "_blank">${doc.contents}</a></li>`;
   });
   $result.innerHTML = `<ul class="list-group list-group-flush">
   ${li.join('')}</ul>`;
@@ -19,7 +19,7 @@ function error() {
 }
 function search() {
   const { value } = $text;
-  if ($text.value === '') {
+  if ($text.value == '') {
     alert('검색어를 입력하세요');
     return false;
   }
