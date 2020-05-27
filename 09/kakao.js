@@ -1,18 +1,18 @@
 const $btn = document.querySelector('#search-btn');
 const $text = document.querySelector('#search-text');
+const $result = document.querySelector('#sresult');
 const url = 'https://dapi.kakao.com/v2/search/web';
 const headers = {
   Authorization: 'KakaoAK 0a0905f3178b20305fd9f550e69feab5',
 };
 function success(data) {
-  //   console.log(result);
-  //result.json().then((data) => {
   const { documents } = data;
-  document.map((doc) => {
-    return `<li class="list-group-item"></li>`;
+  const li = documents.map((doc) => {
+    return `<li class="list-group-item"><a href="${doc.url}" target = "_blank">
+    ${doc.contents}</a></li>`;
   });
-  console.log(data);
-  //});
+  $result.innerHTML = `<ul class="list-group list-group-flush">
+  ${li.join('')}</ul>`;
 }
 function error() {
   alert('데이터를 불러올 수 없습니다');
