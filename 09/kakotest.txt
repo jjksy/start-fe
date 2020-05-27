@@ -1,3 +1,9 @@
 curl -v -X GET "https://dapi.kakao.com/v2/search/web" \
 --data-urlencode "query=이효리" \
 -H "Authorization: KakaoAK 0a0905f3178b20305fd9f550e69feab5 "
+
+------------
+GET "https://dapi.kakao.com/v2/search/web = kakao"
+{
+    "Authorization" :  "KakaoAK 0a0905f3178b20305fd9f550e69feab5 "
+} 
