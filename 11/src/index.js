@@ -1,1 +1,1 @@
-console.log(1);
+import css from './todo.css';
