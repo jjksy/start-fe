@@ -2,6 +2,9 @@ module.exports = {
   entry: './src/main.js',
   output: {
     filename: 'app.js',
-    path: `${__dirname}/dist`,
+    path: `${_dirname}/dist`,
+  },
+  devServer: {
+    contentBase: './dist',
   },
 };
