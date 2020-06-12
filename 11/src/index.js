@@ -9,6 +9,13 @@ const todoModel = {
   text: '',
   isDone: false,
 };
+
+const todos = [
+  {
+    text: 'js공부',
+    isDone: false,
+  },
+];
 // console.log($inputForm);
 
 $inputForm.addEventListener('submit', (event) => {
@@ -19,4 +26,11 @@ $inputForm.addEventListener('submit', (event) => {
   $input.value = '';
 });
 
+todos.map((todo, index) => {
+  return `<li>
+  <button class="delete">×</button>
+  <input type="checkbox" class="toggle-checked">
+  <span class="text">JS공부하기</span>
+</li>`;
+});
 $result.innerHTML = '';
