@@ -1,6 +1,7 @@
 const $result = document.querySelector('#result');
 
 export function render(data) {
+  console.log('todos', data);
   const html = data.map((todo, index) => {
     return `<li>
           <button class="delete">×</button>
