@@ -1,9 +1,10 @@
 import { render } from './html-render';
 import formInput from './form-input';
 import './todos.css';
+import { loadData } from './data-manager';
 const $result = document.querySelector('#result');
 
-const todos = [];
+const todos = loadData();
 
 $result.addEventListener('click', (event) => {
   const { className } = event.target;

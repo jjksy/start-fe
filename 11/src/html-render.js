@@ -1,9 +1,6 @@
+import { saveData } from './data-manager';
 const $result = document.querySelector('#result');
 
-function saveData(data) {
-  console.log('todos:', data);
-  localStorage.setItem('data', JSON.stringify(data));
-}
 export function render(data) {
   saveData(data);
   const html = data.map((todo, index) => {
