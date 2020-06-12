@@ -1,4 +1,5 @@
 import { render } from './html-render';
+import formInput from './form-input';
 import './todos.css';
 
 const todoModel = {
@@ -15,4 +16,5 @@ const todos = [
 ];
 // console.log($inputForm);
 
+formInput.init();
 render(todos);
