@@ -1,8 +1,8 @@
+import { render } from './html-render';
 import './todos.css';
 
 const $inputForm = document.querySelector('#input-form');
 const $input = document.querySelector('#input');
-const $result = document.querySelector('#result');
 
 const todoModel = {
   id: '',
@@ -12,12 +12,8 @@ const todoModel = {
 
 const todos = [
   {
-    text: 'js공부',
+    text: 'aaa',
     isDone: false,
-  },
-  {
-    text: 'js test',
-    isDone: true,
   },
 ];
 // console.log($inputForm);
@@ -30,12 +26,4 @@ $inputForm.addEventListener('submit', (event) => {
   $input.value = '';
 });
 
-const html = todos.map((todo, index) => {
-  return `<li>
-  <button class="delete">×</button>
-  <input type="checkbox" class="toggle-checked"
-  ${todo.isDone ? 'checked' : ''}/>
-  <span class="text">${todo.text}</span>
-</li>`;
-});
-$result.innerHTML = `<ul>${html.join(``)}</ul>`;
+render(todos);
