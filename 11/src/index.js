@@ -10,10 +10,14 @@ const todos = [
   },
 ];
 $result.addEventListener('click', (event) => {
-  const className = event.target.className;
+  const { className } = event.target;
   if (className === 'delete') {
-    console.log('delete');
+    // console.log('delete');
+    const { index } = event.target.parentElement.dataset;
+    todos.splice(deltaIndex, 1);
+    // console.log(index);
   } else if (className === 'togle-checked') {
+    const { index } = event.target.parentElement.dataset;
   }
 });
 // console.log($inputForm);
