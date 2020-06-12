@@ -26,11 +26,12 @@ $inputForm.addEventListener('submit', (event) => {
   $input.value = '';
 });
 
-todos.map((todo, index) => {
+const html = todos.map((todo, index) => {
   return `<li>
   <button class="delete">×</button>
   <input type="checkbox" class="toggle-checked">
-  <span class="text">JS공부하기</span>
+  ${todo.isDone ? 'checked' : ''}
+  <span class="text">${todo.text}</span>
 </li>`;
 });
-$result.innerHTML = '';
+$result.innerHTML = `<ul>${html.join(``)}</ul>`;
