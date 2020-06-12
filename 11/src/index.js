@@ -14,7 +14,8 @@ $result.addEventListener('click', (event) => {
   if (className === 'delete') {
     // console.log('delete');
     const { index } = event.target.parentElement.dataset;
-    todos.splice(deltaIndex, 1);
+    todos.splice(index, 1);
+    render(todos);
     // console.log(index);
   } else if (className === 'togle-checked') {
     const { index } = event.target.parentElement.dataset;
