@@ -1,7 +1,11 @@
 const $result = document.querySelector('#result');
 
-export function render(data) {
+function saveData(data) {
   console.log('todos:', data);
+  localStorage.setItem('data', JSON.stringify(data));
+}
+export function render(data) {
+  saveData(data);
   const html = data.map((todo, index) => {
     return `<li data-index = "${index}">
           <button class="delete">×</button>
@@ -13,4 +17,4 @@ export function render(data) {
   $result.innerHTML = `<ul>${html.join(``)}</ul>`;
 }
 
-// export { render };
+//export { render };
