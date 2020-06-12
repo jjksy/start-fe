@@ -15,6 +15,10 @@ const todos = [
     text: 'js공부',
     isDone: false,
   },
+  {
+    text: 'js test',
+    isDone: true,
+  },
 ];
 // console.log($inputForm);
 
@@ -29,8 +33,8 @@ $inputForm.addEventListener('submit', (event) => {
 const html = todos.map((todo, index) => {
   return `<li>
   <button class="delete">×</button>
-  <input type="checkbox" class="toggle-checked">
-  ${todo.isDone ? 'checked' : ''}
+  <input type="checkbox" class="toggle-checked"
+  ${todo.isDone ? 'checked' : ''}/>
   <span class="text">${todo.text}</span>
 </li>`;
 });
