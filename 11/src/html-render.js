@@ -11,3 +11,5 @@ export function render(data) {
   });
   $result.innerHTML = `<ul>${html.join(``)}</ul>`;
 }
+
+// export { render };
