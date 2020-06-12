@@ -1,0 +1,12 @@
+{
+  "todos": [
+    {
+      "text": "js공부",
+      "isDone": false
+    },
+    {
+      "text": "js공부",
+      "isDone": false
+    }
+  ]
+}
