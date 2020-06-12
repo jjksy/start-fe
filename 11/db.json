@@ -1,13 +1,11 @@
 {
   "todos": [
     {
-      "id": 1,
       "text": "js공부",
       "isDone": false
     },
     {
-      "id": 2,
-      "text": "js공부2",
+      "text": "js공부1",
       "isDone": false
     }
   ]
