@@ -16,9 +16,9 @@ $result.addEventListener('click', (event) => {
   } else if (className === 'toggle-checked') {
     const { index } = event.target.parentElement.dataset;
     todos[index].isDone = !todos[index].isDone;
+    render(todos);
   }
 });
-// console.log($inputForm);
 
 formInput.init(todos);
 render(todos);
