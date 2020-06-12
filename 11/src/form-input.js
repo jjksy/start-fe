@@ -6,10 +6,9 @@ const $input = document.querySelector('#input');
 
 function init(data) {
   $inputForm.addEventListener('submit', (event) => {
-    //   console.log(event);
     event.preventDefault();
     const text = $input.value;
-    //   console.log(text);
+    if (!text) return;
     $input.value = '';
   });
 

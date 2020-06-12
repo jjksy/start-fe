@@ -4,10 +4,10 @@ import './todos.css';
 const $result = document.querySelector('#result');
 
 const todos = [
-  {
-    text: 'aaa',
-    isDone: false,
-  },
+  //   {
+  //     text: 'aaa',
+  //     isDone: false,
+  //   },
 ];
 $result.addEventListener('click', (event) => {
   const { className } = event.target;
@@ -19,6 +19,7 @@ $result.addEventListener('click', (event) => {
     // console.log(index);
   } else if (className === 'togle-checked') {
     const { index } = event.target.parentElement.dataset;
+    todos[index].isDone = !todos[index].isDone;
   }
 });
 // console.log($inputForm);
