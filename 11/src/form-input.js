@@ -1,11 +1,9 @@
+import todoModel from './todo-model';
+import { render } from './html-render';
+
 const $inputForm = document.querySelector('#input-form');
 const $input = document.querySelector('#input');
 
-const todoModel = {
-  id: '',
-  text: '',
-  isDone: false,
-};
 function init(data) {
   $inputForm.addEventListener('submit', (event) => {
     //   console.log(event);
@@ -16,11 +14,12 @@ function init(data) {
   });
 
   data.push({
+    ...todoModel,
     text,
     isDone: false,
   });
+  render(data);
 }
-
 export default {
   init,
 };
